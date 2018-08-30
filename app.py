@@ -76,7 +76,7 @@ def push_trash():
         6: "資源回収（資源２類）"
     }
     weekday = datetime.datetime.now().weekday()
-    return_text += trash_schedule
+    return_text += trash_schedule[weekday]
     to = "Ua21ed0b7a6399fad17ba2adfd9efaa03"
 
     return 'OK'
@@ -86,9 +86,26 @@ def push_trash():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    trash_schedule = {
+        0: "燃えないゴミ　・　有害危険ゴミ",
+        1: "燃えるゴミ",
+        2: "資源物１類　 ビン・カン・ペットボトル",
+        3: "おやすみ",
+        4: "燃えるゴミ",
+        5: "おやすみ",
+        6: "資源回収（資源２類）"
+    }
+    weekday = datetime.datetime.now().weekday()
+    if event.message.text == "今日":
+        text = trash_schedule[weekday]
+    elif event.message.text == "明日":
+        text = trash_schedule[weekday + 1]
+    else:
+        text = "今日か明日のゴミ回収を調べられるよ"
+
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.event))
+        TextSendMessage(text))
         #TextSendMessage(text=event.message.text))
 
 
