@@ -1,5 +1,6 @@
 import os
 import sys
+from datetime import datetime
 from flask import Flask, request, abort
 
 from linebot import ( LineBotApi, WebhookHandler )
@@ -52,6 +53,35 @@ def callback():
         abort(400)
 
     return 'OK'
+
+
+@app.route('/push_trash', methods=['GET'])
+def push_trash():
+    return_text = "ーー今日捨てられるゴミーー\n"
+    # 0 : Mon
+    # 1 : Tue
+    # 2 : Web
+    # 3 : Thu
+    # 4 : Fri
+    # 5 : Sat
+    # 6 : Sun
+
+    trash_schedule = {
+        0: "燃えないゴミ　・　有害危険ゴミ",
+        1: "燃えるゴミ",
+        2: "資源物１類　 ビン・カン・ペットボトル",
+        3: "おやすみ",
+        4: "燃えるゴミ",
+        5: "おやすみ",
+        6: "資源回収（資源２類）"
+    }
+    weekday = datetime.datetime.now().weekday()
+    return_text += trash_schedule
+    to = "Ua21ed0b7a6399fad17ba2adfd9efaa03"
+
+    return 'OK'
+
+
 
 
 @handler.add(MessageEvent, message=TextMessage)
