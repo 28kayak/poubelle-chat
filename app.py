@@ -75,7 +75,7 @@ def push_trash():
         5: "おやすみ",
         6: "資源回収（資源２類）"
     }
-    weekday = datetime.datetime.now().weekday()
+    weekday = datetime.now().weekday()
     return_text += trash_schedule[weekday]
     to = "Ua21ed0b7a6399fad17ba2adfd9efaa03"
 
@@ -101,8 +101,10 @@ def handle_message(event):
         text = trash_schedule[weekday]
     elif event.message.text == "明日":
         text = trash_schedule[weekday + 1]
+    elif event.message.text == "明後日":
+        text = trash_schedule[weekday + 2]
     else:
-        text = "今日か明日のゴミ回収を調べられるよ"
+        text = "今日か明日か明後日のゴミ回収品を調べられるよ"
 
     line_bot_api.reply_message(
         event.reply_token,
