@@ -1,6 +1,6 @@
 import os
 import sys
-from datetime import datetime
+#from datetime import datetime
 from flask import Flask, request, abort
 
 from linebot import ( LineBotApi, WebhookHandler )
@@ -97,6 +97,7 @@ def handle_message(event):
     }
     weekday = datetime.datetime.now().weekday()
     if event.message.text == "今日":
+
         text = trash_schedule[weekday]
     elif event.message.text == "明日":
         text = trash_schedule[weekday + 1]
