@@ -11,7 +11,6 @@ from linebot.models import( MessageEvent, TextMessage, TextSendMessage )
 app = Flask(__name__)
 
 
-
 channel_access_token = os.environ['LINE_CHANNEL_ACCESS_TOKEN']
 channel_secret = os.environ['LINE_CHANNEL_SECRETE']
 
@@ -24,8 +23,6 @@ if channel_access_token is None:
 
 line_bot_api = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
-
-
 
 
 @app.route("/")
