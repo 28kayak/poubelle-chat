@@ -70,14 +70,16 @@ def push_trash():
         0: "燃えないゴミ　・　有害危険ゴミ",
         1: "燃えるゴミ",
         2: "資源物１類　 ビン・カン・ペットボトル",
-        3: "おやすみ",
+        3: "捨てられるゴミはありません",
         4: "燃えるゴミ",
-        5: "おやすみ",
+        5: "捨てられるゴミはありません",
         6: "資源回収（資源２類）"
     }
     weekday = datetime.now().weekday()
     return_text += trash_schedule[weekday]
     to = "Ua21ed0b7a6399fad17ba2adfd9efaa03"
+
+    line_bot_api.push_message(to, TextSendMessage(text=return_text))
 
     return 'OK'
 
@@ -90,9 +92,9 @@ def handle_message(event):
         0: "燃えないゴミ　・　有害危険ゴミ",
         1: "燃えるゴミ",
         2: "資源物１類　 ビン・カン・ペットボトル",
-        3: "おやすみ",
+        3: "捨てられるゴミはありません",
         4: "燃えるゴミ",
-        5: "おやすみ",
+        5: "捨てられるゴミはありません",
         6: "資源回収（資源２類）"
     }
     weekday = datetime.now().weekday()
