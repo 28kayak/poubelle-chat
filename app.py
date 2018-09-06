@@ -32,8 +32,8 @@ handler = WebhookHandler(channel_secret)
 
 @app.route("/")
 def hello_world():
-    app.send_static_file('index.html')
-    return "Hello World!!"
+    return app.send_static_file('index.html')
+
 
 
 @app.route("/callback", methods=['POST'])
