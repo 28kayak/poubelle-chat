@@ -32,7 +32,7 @@ handler = WebhookHandler(channel_secret)
 
 @app.route("/")
 def hello_world():
-    return app.send_static_file('index.html')
+    return app.send_static_file('./index.html')
 
 
 
