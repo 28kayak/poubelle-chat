@@ -32,6 +32,7 @@ handler = WebhookHandler(channel_secret)
 
 @app.route("/")
 def hello_world():
+    app.send_static_file('index.html')
     return "Hello World!!"
 
 
@@ -57,7 +58,7 @@ def callback():
 
 @app.route('/push_trash', methods=['GET'])
 def push_trash():
-    return_text = "ーー今日捨てられるゴミーー\n"
+    return_text = "ーー今日 捨てられるゴミーー\n"
     # 0 : Mon
     # 1 : Tue
     # 2 : Web
@@ -73,7 +74,7 @@ def push_trash():
         3: "捨てられるゴミはありません",
         4: "燃えるゴミ",
         5: "捨てられるゴミはありません",
-        6: "資源回収（資源２類）"
+        6: "資源回収（資源２類）古着・新聞紙・雑誌"
     }
     weekday = datetime.now().weekday()
     return_text += trash_schedule[weekday]
@@ -95,11 +96,10 @@ def handle_message(event):
         3: "捨てられるゴミはありません",
         4: "燃えるゴミ",
         5: "捨てられるゴミはありません",
-        6: "資源回収（資源２類）"
+        6: "資源回収（資源２類）古着・新聞紙・雑誌"
     }
     weekday = datetime.now().weekday()
     if event.message.text == "今日":
-
         text = trash_schedule[weekday]
     elif event.message.text == "明日":
         text = trash_schedule[weekday + 1]
