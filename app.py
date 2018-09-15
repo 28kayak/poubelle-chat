@@ -91,19 +91,8 @@ def push_trash():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    params = (
-        ('indent', 'on'),
-        ('q', 'trash_name:\u96E8\u6238'),
-        ('wt', 'json'),
-    )
 
-    response = requests.get('http://4d8d496e.ngrok.io/solr/trash/select', params=params)
-    #print("response: " + response.txt)
 
-    # NB. Original query string below. It seems impossible to parse and
-    # reproduce query strings 100% accurately so the one below is given
-    # in case the reproduced version is not "correct".
-    # response = requests.get('http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json')
 
     trash_schedule = {
         0: "燃えないゴミ　・　有害危険ゴミ",
@@ -122,11 +111,31 @@ def handle_message(event):
     elif event.message.text == "明後日":
         text = trash_schedule[weekday + 2]
     else:
-        text = "今日か明日か明後日のゴミ回収品を調べられるよ"
+        trash_name = event.message.text
+        query = 'trash_name:' + trash_name
+        params = (
+            ('indent', 'on'),
+            ('q', query),
+            ('wt', 'json'),
+        )
+
+        # get request to solr
+        response = requests.get('http://4d8d496e.ngrok.io/solr/trash/select', params=params)
+        # Original curl command
+        # curl http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json
+        # response = requests.get('http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json')
+
+        if response.status_code == 200:
+            search_result = response.json()
+            print(search_result.trash_name)
+            text = "分別カテゴリー　:" + search_result.category + "\n" + "捨てる方法　:" + search_result.method
+
+
+
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(response.text))
+        TextSendMessage(text))
         #TextSendMessage(text=event.message.text))
 
 
