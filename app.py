@@ -1,6 +1,7 @@
 import os
 import sys
 import requests
+import json
 from datetime import datetime
 from flask import Flask, request, abort
 
@@ -126,8 +127,9 @@ def handle_message(event):
         # response = requests.get('http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json')
 
         if response.status_code == 200:
-            search_result = response.json()
-            # print wjdata['data']['current_condition'][0]['temp_C']
+            search_result_json = response.json()
+            search_result = json.load(search_result_json)
+            #print wjdata['data']['current_condition'][0]['temp_C']
             text = search_result['response']['docs']['trash_name'] + "\n"
             text += "分別カテゴリー　:" + search_result['response']['docs']['category'] + "\n"
             text += "捨てる方法　:" + search_result['response']['docs']['method']
