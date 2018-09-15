@@ -1,0 +1,68 @@
+<add>
+	<doc>
+		<field name="id">01</field>
+		<field name="trash_name">アイスの袋</field>
+		<field name="category">資源物1類</field>
+		<field name="method">食品包装プラスチックは、水資源の無駄を防ぐため、軽くすすいできれいになるもののみです。それ以外はもえるごみへ！</field>
+	</doc>
+	<doc>
+		<field name="id">02</field>
+		<field name="trash_name">アイロン 足拭きマット</field>
+		<field name="category">小型家電</field>
+		<field name="method">回収ボックスヘ もえないごみとしても出せます</field>
+	</doc>
+	<doc>
+		<field name="id">03</field>
+		<field name="trash_name">足拭きマット</field>
+		<field name="category">燃えるゴミ</field>
+		<field name="method"> </field>
+	</doc>
+	<doc>
+		<field name="id">04</field>
+		<field name="trash_name">油（食用油）</field>
+		<field name="category">燃えるゴミ</field>
+		<field name="method">紙等にしみ込ませるか、固めて. ※液体のものは、排出禁止</field>
+	</doc>
+	<doc>
+		<field name="id">05</field>
+		<field name="trash_name">雨具（カッパ)</field>
+		<field name="category">燃えるゴミ</field>
+		<field name="method"> </field>
+	</doc>
+	<doc>
+		<field name="id">06</field>
+		<field name="trash_name">雨戸</field>
+		<field name="category">粗大ごみ・適正処理困難物</field>
+		<field name="method">戸別収集の場合は2枚1品、最大8枚まで　90cm未満なら、もえないごみ</field>
+	</doc>
+	<doc>
+		<field name="id">07</field>
+		<field name="trash_name">あめの袋</field>
+		<field name="category">資源物1類</field>
+		<field name="method">食品包装プラスチックは、水資源の無駄を防ぐため、軽くすすいできれいになるもののみです。それ以外はもえるごみへ！</field>
+	</doc>
+	<doc>
+		<field name="id">08</field>
+		<field name="trash_name">アルバム（写真用）</field>
+		<field name="category">燃えるゴミ</field>
+		<field name="method">特になし</field>
+	</doc>
+	<doc>
+		<field name="id">09</field>
+		<field name="trash_name">アルミ箔</field>
+		<field name="category">燃えるゴミ</field>
+		<field name="method">特になし</field>
+	</doc>
+	<doc>
+		<field name="id">10</field>
+		<field name="trash_name">石</field>
+		<field name="category">排出禁止</field>
+		<field name="method">造園業者または石材店等へ</field>
+	</doc>
+</add>
+<!--
+
+ゴミ捨てに関するデータ（さいたま市）　
+
+
+-->

@@ -1,5 +1,6 @@
 import os
 import sys
+import requests
 from datetime import datetime
 from flask import Flask, request, abort
 
@@ -32,7 +33,8 @@ handler = WebhookHandler(channel_secret)
 
 @app.route("/")
 def hello_world():
-    return app.send_static_file('./index.html')
+    #return app.send_static_file('./index.html')
+    return "Hello world"
 
 
 
@@ -55,7 +57,7 @@ def callback():
 
     return 'OK'
 
-
+# push notification
 @app.route('/push_trash', methods=['GET'])
 def push_trash():
     return_text = "ーー今日 捨てられるゴミーー\n"
@@ -89,6 +91,20 @@ def push_trash():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    params = (
+        ('indent', 'on'),
+        ('q', 'trash_name:\u96E8\u6238'),
+        ('wt', 'json'),
+    )
+
+    response = requests.get('http://localhost:8983/solr/trash/select', params=params)
+    print("response: " + response.txt)
+
+    # NB. Original query string below. It seems impossible to parse and
+    # reproduce query strings 100% accurately so the one below is given
+    # in case the reproduced version is not "correct".
+    # response = requests.get('http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json')
+
     trash_schedule = {
         0: "燃えないゴミ　・　有害危険ゴミ",
         1: "燃えるゴミ",

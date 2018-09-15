@@ -1,0 +1,27 @@
+{
+	"add-field": {
+		"name": "trash_name",
+		"type": "text_ja",
+		"indexed" : "true", 
+		"stored": "true",
+		"required": "true",
+		"multiValued" : "false"
+	},
+	"add-field": {
+		"name" : "category",
+		"type": "string",
+		"indexed" : "true", 
+		"stored": "true",
+		"required": "true",
+		"multiValued" : "false"
+	},
+	"add-field" : {
+		"name" : "method",
+		"type": "text_ja",
+		"indexed" : "true", 
+		"stored": "true",
+		"required": "false",
+		"multiValued" : "false"
+	}
+
+}
