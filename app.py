@@ -98,7 +98,7 @@ def handle_message(event):
     )
 
     response = requests.get('http://localhost:8983/solr/trash/select', params=params)
-    print("response: " + response.txt)
+    #print("response: " + response.txt)
 
     # NB. Original query string below. It seems impossible to parse and
     # reproduce query strings 100% accurately so the one below is given
@@ -126,7 +126,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text))
+        TextSendMessage(response.text))
         #TextSendMessage(text=event.message.text))
 
 
