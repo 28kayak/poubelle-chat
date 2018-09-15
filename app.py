@@ -128,7 +128,7 @@ def handle_message(event):
         if response.status_code == 200:
             search_result = response.json()
             # print wjdata['data']['current_condition'][0]['temp_C']
-            print(search_result['trash_name'])
+            print(search_result['response']['doc']['trash_name'])
             text = "分別カテゴリー　:" + search_result['category'] + "\n" + "捨てる方法　:" + search_result['method']
 
 
