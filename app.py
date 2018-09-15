@@ -135,20 +135,17 @@ def handle_message(event):
             docs = search_result['response']['docs']
 
             for doc in docs:
-                text = doc['trash_name']
-                print(text)
+                #text = doc['category']
+                #print(text)
 
-            #text = search_result['response']['docs']['trash_name'] + "\n"
-            #text += "分別カテゴリー　:" + search_result['response']['docs']['category'] + "\n"
-            #text += "捨てる方法　:" + search_result['response']['docs']['method']
-
-
-
+                text = doc['trash_name'] + "\n"
+                text += "分別カテゴリー　:" + doc['category'] + "\n"
+                text += "捨てる方法　:" + doc['method']
 
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text))
-        #TextSendMessage(text=event.message.text))
+        # TextSendMessage(text=event.message.text))
 
 
 if __name__ == "__main__":
