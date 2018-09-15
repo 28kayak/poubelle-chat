@@ -127,9 +127,9 @@ def handle_message(event):
         # response = requests.get('http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json')
 
         if response.status_code == 200:
-            search_result_json = response.json()
+            search_result = response.json()
             #print(search_result_json)
-            search_result = json.loads(search_result_json)
+            #search_result = json.loads(search_result_json)
             print(search_result['response'])
             print(search_result['response']['docs'])
             print(search_result['response']['docs']['trash_name'])
@@ -153,3 +153,6 @@ if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0',
             port=port)
     print("app is running")
+
+# useful site
+#https://curl.trillworks.com/#
