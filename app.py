@@ -97,7 +97,7 @@ def handle_message(event):
         ('wt', 'json'),
     )
 
-    response = requests.get('http://localhost:8983/solr/trash/select', params=params)
+    response = requests.get('http://4d8d496e.ngrok.io/solr/trash/select', params=params)
     #print("response: " + response.txt)
 
     # NB. Original query string below. It seems impossible to parse and
