@@ -130,9 +130,13 @@ def handle_message(event):
             search_result = response.json()
             #print(search_result_json)
             #search_result = json.loads(search_result_json)
-            print(search_result['response'])
-            print(search_result['response']['docs'])
-            print(search_result['response']['docs']['trash_name'])
+            #print(search_result['response'])
+            #print(search_result['response']['docs'])
+            docs = search_result['response']['docs']
+
+            for doc in docs:
+                text = doc[trash_name]
+                print(text)
 
             #text = search_result['response']['docs']['trash_name'] + "\n"
             #text += "分別カテゴリー　:" + search_result['response']['docs']['category'] + "\n"
