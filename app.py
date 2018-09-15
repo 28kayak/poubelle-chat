@@ -128,19 +128,15 @@ def handle_message(event):
 
         if response.status_code == 200:
             search_result = response.json()
-            #print(search_result_json)
-            #search_result = json.loads(search_result_json)
-            #print(search_result['response'])
-            #print(search_result['response']['docs'])
             docs = search_result['response']['docs']
 
             for doc in docs:
-                #text = doc['category']
-                #print(text)
-
                 text = doc['trash_name'] + "\n"
-                text += "分別カテゴリー　:" + doc['category'] + "\n"
-                text += "捨てる方法　:" + doc['method']
+                text += "分別カテゴリー　: " + doc['category'] + "\n"
+                if doc['method'] == " ":
+                    text += "捨てる方法　: " + "普通の家庭ごみとしてゴミ捨て場に！"
+                else:
+                    text += "捨てる方法　: " + doc['method']
 
     line_bot_api.reply_message(
         event.reply_token,
