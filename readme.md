@@ -15,7 +15,8 @@ And of course Poubell Chat itself is open source with a [public repository][dill
  on GitHub.
  
 ## Architecture
-![Solr Admin](https://github.com/28kayak/poubelle-chat/tree/master/img/architecture.png)  
+
+![architecture](https://github.com/28kayak/poubelle-chat/blob/master/img/architecture.png)  
 
 
 
