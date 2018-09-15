@@ -1,7 +1,6 @@
 import os
 import sys
 import requests
-import json
 from datetime import datetime
 from flask import Flask, request, abort
 
@@ -14,8 +13,8 @@ from linebot.models import( MessageEvent, TextMessage, TextSendMessage )
 app = Flask(__name__)
 
 
-#channel_access_token = os.environ['LINE_CHANNEL_ACCESS_TOKEN']
-#channel_secret = os.environ['LINE_CHANNEL_SECRETE']
+# channel_access_token = os.environ['LINE_CHANNEL_ACCESS_TOKEN']
+# channel_secret = os.environ['LINE_CHANNEL_SECRETE']
 
 # get channel_secret and channel_access_token from your environment variable
 channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
@@ -58,6 +57,7 @@ def callback():
 
     return 'OK'
 
+
 # push notification
 @app.route('/push_trash', methods=['GET'])
 def push_trash():
@@ -86,8 +86,6 @@ def push_trash():
     line_bot_api.push_message(to, TextSendMessage(text=return_text))
 
     return 'OK'
-
-
 
 
 @handler.add(MessageEvent, message=TextMessage)
@@ -138,8 +136,6 @@ def handle_message(event):
 
         if text == " ":
             text += '見つけられませんでした。'
-
-
 
     line_bot_api.reply_message(
         event.reply_token,
