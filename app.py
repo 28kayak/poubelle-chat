@@ -138,6 +138,11 @@ def handle_message(event):
                 else:
                     text += "捨てる方法　: " + doc['method']
 
+        if text is None:
+            text += '見つけられませんでした。'
+
+
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text))
