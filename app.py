@@ -135,7 +135,7 @@ def handle_message(event):
             docs = search_result['response']['docs']
 
             for doc in docs:
-                text = doc[trash_name]
+                text = doc['trash_name']
                 print(text)
 
             #text = search_result['response']['docs']['trash_name'] + "\n"
