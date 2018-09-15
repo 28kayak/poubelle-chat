@@ -92,9 +92,7 @@ def push_trash():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-
-
-
+    text = " "
     trash_schedule = {
         0: "燃えないゴミ　・　有害危険ゴミ",
         1: "燃えるゴミ",
@@ -138,7 +136,7 @@ def handle_message(event):
                 else:
                     text += "捨てる方法　: " + doc['method']
 
-        if text is None:
+        if text == " ":
             text += '見つけられませんでした。'
 
 
