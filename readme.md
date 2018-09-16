@@ -1,30 +1,33 @@
 # Poubell Chat 
 Poubell chat is a chat bot application that run on Line App.
-This application will answer your question about how to throw away trash in Japan(somewhere in Saitama Pref).
+This application will answer your question about how to throw away trash in Japan(somewhere in Saitama Pref).    
+こんにちわ、Poubell　chatはLINEを使ったchat botアプリです。
+このアプリは、日本にあるゴミの分別についての質問に答えてくれるでしょう。
 
 ## Technology 
-Poubell Chat uses a number of open source projects to work properly: 
+Poubell Chat uses a number of open source projects to work properly:   
+このチャットは、いくつかのオープンソースプロジェクトを使っています。
 
-* [Python3] - as a programming language 
-* [heroku] - as a cloud application platform
-* [Apache Solr] - as a search-engine to search xml data
-* [Line SDK for python] - line sdk allows to communicate with users 
-* [ngrok] - ngrok secure introspectable tunnels to localhost webhook development tool and debugging tool.  
+* [Python3] - as a programming language プログラミング言語として使いました。
+* [heroku] - as a cloud application platform　アプリケーションプラットホームとして使いました。
+* [Apache Solr] - as a search-engine to search xml data　サーチエンジンとして使いました。
+* [Line SDK for python] - line sdk allows to communicate with users　LINEのsdkを使っています。 
+* [ngrok] - ngrok secure introspectable tunnels to localhost webhook development tool and debugging tool.  　　
 
 And of course Poubell Chat itself is open source with a [public repository][dill]
  on GitHub.
- 
+ そして、このチャット自身もオープンソースプロジェクトです。
 ## Architecture
 
 ![architecture](https://github.com/28kayak/poubelle-chat/blob/master/img/architecture.png)  
 
 ## Installation 
 
-- Install Python3 
-- Install Apache Solr  
-For Linux(Centos)  
+- Install Python3　パイソン３をインストールする 
+- Install Apache Solr  ソーラーをインストールする
+For Linux(Centos)  リナックスをお使いの方は、以下のリンクをご利用ください。
 See [install solr]  
-For Mac OS  
+For Mac OS  マックをお使いのかたは
 you can download solr by using `brew` 
 ```bash
 brew install solr
@@ -33,7 +36,7 @@ brew install solr
 #### NOTE
 Downloading by brew, solr's file directory will slightly different from building it from binary or source.  
 We do not edit config file for this project yet.   
-But, keep mind if you keep using solr for your own projects. 
+But, keep in mind if you keep using solr for your own projects. 
 
 - Run solr on your machine and Open your local-solr to public using ngrok 
 ```bash
@@ -48,7 +51,7 @@ ngrok http 8983
 edit the line below.  
 replace `YOUR RANDOM NUMBER` with http url that ngrok gives you.  
 ```python
-     response = requests.get('http://YOUR RANDOM NUMBER.ngrok.io/solr/trash/select', params=params)
+response = requests.get('http://YOUR RANDOM NUMBER.ngrok.io/solr/trash/select', params=params)
 ```
 
 - create solr schema 

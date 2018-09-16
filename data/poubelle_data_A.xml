@@ -1,3 +1,7 @@
+<!--
+ゴミ捨てに関するデータ（さいたま市）　
+「あ」で始まるゴミの名前
+-->
 <add>
 	<doc>
 		<field name="id">01</field>
@@ -7,7 +11,7 @@
 	</doc>
 	<doc>
 		<field name="id">02</field>
-		<field name="trash_name">アイロン 足拭きマット</field>
+		<field name="trash_name">アイロン</field>
 		<field name="category">小型家電</field>
 		<field name="method">回収ボックスヘ もえないごみとしても出せます</field>
 	</doc>
@@ -60,9 +64,3 @@
 		<field name="method">造園業者または石材店等へ</field>
 	</doc>
 </add>
-<!--
-
-ゴミ捨てに関するデータ（さいたま市）　
-
-
--->
