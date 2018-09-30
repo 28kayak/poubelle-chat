@@ -129,7 +129,7 @@ def handle_message(event):
             docs = search_result['response']['docs']
 
             for doc in docs:
-                text = doc['trash_name'] + "\n"
+                text += doc['trash_name'] + "\n"
                 text += "分別カテゴリー　: " + doc['category'] + "\n"
                 if doc['method'] == " ":
                     text += "捨てる方法　: " + "普通の家庭ごみとしてゴミ捨て場に！"
