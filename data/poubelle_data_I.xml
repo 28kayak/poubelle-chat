@@ -1,0 +1,78 @@
+<!--
+ゴミ捨てに関するデータ（さいたま市）　
+「い」で始まるゴミの名前
+-->
+<add>
+	<doc>
+        <field name="id">11</field>
+		<field name="trash_name">衣装ケース</field>
+		<field name="category">不燃ゴミ</field>
+		<field name="method">90㎝以上2m未満のものは戸別収集又は直接搬入</field>
+    </doc>
+    <doc>
+        <field name="id">12</field>
+		<field name="trash_name">いす</field>
+		<field name="category">不燃ゴミ</field>
+		<field name="method">90㎝以上2m未満のものは戸別収集又は直接搬入</field>
+    </doc>
+    <doc>
+        <field name="id">13</field>
+		<field name="trash_name">イチゴのパック（プラマーク付き）</field>
+		<field name="category">資源物1類</field>
+		<field name="method">食品包装プラスチックは、水資源の無駄を防ぐため、軽くすすいできれいになるもののみです。それ以外はもえるごみへ！</field>
+    </doc>
+    <doc>
+        <field name="id">14</field>
+		<field name="trash_name">一輪車</field>
+		<field name="category">不燃ゴミ</field>
+		<field name="method">90㎝以上2m未満のものは戸別収集又は直接搬入</field>
+    </doc>
+    <doc>
+        <field name="id">15</field>
+		<field name="trash_name">一斗缶</field>
+		<field name="category">不燃ゴミ</field>
+		<field name="method">中身を使い切ってから</field>
+    </doc>
+    <doc>
+        <field name="id">16</field>
+		<field name="trash_name">イヤホン</field>
+		<field name="category">小型家電　不燃ゴミ</field>
+		<field name="method">回収ボックスへ。　燃えないゴミとしても出せます。</field>
+    </doc>
+    <doc>
+        <field name="id">17</field>
+		<field name="trash_name">衣類</field>
+		<field name="category">資源物２類</field>
+		<field name="method">洗って、乾かして（雨の日は翌週に）</field>
+    </doc>
+    <doc>
+        <field name="id">18</field>
+		<field name="trash_name">衣類乾燥機</field>
+		<field name="category">排出禁止</field>
+		<field name="method">家電リサイクル法指定品目</field>
+    </doc>
+    <doc>
+        <field name="id">19</field>
+		<field name="trash_name">インクカートリッジ</field>
+		<field name="category">排出禁止</field>
+		<field name="method">販売店または区役所・支所・公民館へ</field>
+    </doc>
+     <doc>
+        <field name="id">20</field>
+		<field name="trash_name">インスタント麺の袋（プラマーク付き）</field>
+		<field name="category">資源物１類</field>
+		<field name="method">食品包装プラスチックは、水資源の無駄を防ぐため、軽くすすいできれいになるもののみです。それ以外はもえるごみへ！</field>
+    </doc>
+    <doc>
+        <field name="id">21</field>
+		<field name="trash_name">飲料の紙パック</field>
+		<field name="category">資源物２類</field>
+		<field name="method">プラスチックの部分を必ず取って、牛乳パックとして</field>
+    </doc>
+    <doc>
+        <field name="id">22</field>
+		<field name="trash_name">飲料の紙パック（内側銀色アルミのもの）</field>
+		<field name="category">資源物１類</field>
+		<field name="method">　</field>
+    </doc>
+</add>
