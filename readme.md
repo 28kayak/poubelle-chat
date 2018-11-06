@@ -5,7 +5,7 @@ This application will answer your question about how to throw away trash in Japa
 このアプリは、日本にあるゴミの分別についての質問に答えてくれるでしょう。
 ## Demo
 Depending on input, the output is displayed as the result like the image below.
-![result](https://raw.github.com/28kayak/poubelle-chat/blob/master/img/demo.gif)
+![result](https://raw.github.com/28kayak/poubelle-chat/master/img/demo.gif)
 
 
 ## Technology 
