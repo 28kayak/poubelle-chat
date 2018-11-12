@@ -109,6 +109,7 @@ def handle_message(event):
     elif event.message.text == "明後日":
         text = trash_schedule[weekday + 2]
     else:
+        print(event)
         trash_name = event.message.text
         query = 'trash_name:' + trash_name
         params = (
