@@ -125,7 +125,7 @@ def handle_message(event):
 
         # get request to solr
         # response = requests.get('http://4d8d496e.ngrok.io/solr/trash/select', params=params)
-        response = requests.get('http://47db6ec5.ngrok.io/solr/trash/select', params=params)
+        response = requests.get('http://d4c58ecc.ngrok.io/solr/trash/select', params=params)
 
         # Original curl command
         # curl http://localhost:8983/solr/trash/select?indent=on&q=trash_name:雨戸&wt=json
