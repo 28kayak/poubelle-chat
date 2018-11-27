@@ -3,6 +3,9 @@ Poubell chat is a chat bot application that run on Line App.
 This application will answer your question about how to throw away trash in Japan(somewhere in Saitama Pref).    
 こんにちわ、Poubell　chatはLINEを使ったchat botアプリです。
 このアプリは、日本にあるゴミの分別についての質問に答えてくれるでしょう。
+
+Details : https://28kayak.github.io/poubelle-chat/ 
+
 ## Demo
 Depending on input, the output is displayed as the result like the image below.
 ![result](https://raw.github.com/28kayak/poubelle-chat/img/demo.gif)
