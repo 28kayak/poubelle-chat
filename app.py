@@ -1,6 +1,4 @@
-#
-#
-#
+
 import os
 import sys
 import requests
@@ -134,9 +132,12 @@ def handle_message(event):
         if response.status_code == 200:
             search_result = response.json()
             docs = search_result['response']['docs']
+            print(search_result)
+
 
             for doc in docs:
                 text += doc['trash_name'] + "\n"
+                print(doc['trash_name'])
                 text += "分別カテゴリー　: " + doc['category'] + "\n"
                 if doc['method'] == " ":
                     text += "捨てる方法　: " + "普通の家庭ごみとしてゴミ捨て場に！"
