@@ -7,11 +7,10 @@ This application will answer your question about how to throw away trash in Japa
 Details : https://28kayak.github.io/poubelle-chat/ 
 
 ## Demo
-Depending on input, the output is displayed as the result like the image below.
-![result](https://raw.github.com/28kayak/poubelle-chat/img/demo.gif)
+The short demo video is hosted on the Youtube.
+https://youtu.be/8nqRl7Ej7Pg
 
-      
-      
+
 
 
 ## Technology 
