@@ -11,5 +11,5 @@ line-bot-sdk==1.8.0
 MarkupSafe==1.0
 python-aiml==0.9.1
 requests==2.20.0
-urllib3==1.23
+urllib3==1.26.5
 Werkzeug==0.14.1
